@@ -8,7 +8,7 @@ class Main:
     def __init__(self):
         self.UI = self.index
         self.UI.output("Welcome to FPL randomizer\n")
-        self.UI.output(self.UI.getInitText())
+        self.UI.output(self.UI.onChange())
 
     def changeUIComp(self, uiComp):
         self.UI = uiComp

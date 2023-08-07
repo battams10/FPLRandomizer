@@ -1,16 +1,8 @@
-from enum import Enum
-
-class index(Enum):
-     InputTeam = 1
-     GetTransfer = 2
-     ManageChips = 3
-     GetStarting11 = 4
-     GetCaptain = 5
-     Exit = 6
+from teamManager import *
 
 #interface
 class UIComponent:
-    def getInitText(self):
+    def onChange(self):
         pass
 
     def output(self, line):
@@ -24,7 +16,7 @@ class UIComponent:
         pass
 
 class Index(UIComponent):
-    def getInitText(self):
+    def onChange(self):
         return "Select option: 1) Input Team, 2) Get Transfer, 3) Manage Chips, 4) Select Team, 5) Get Captain, 6) Exit\n"
 
     def output(self, line):
@@ -52,9 +44,14 @@ class Index(UIComponent):
 
 class InputTeam(UIComponent):
     playerNumber = 0
+    teamManager = TeamManager()
 
-    def getInitText(self):
+    def onChange(self):
+        self.checkExistingTeam()
         return "Input Team \nEnter player " + str(self.playerNumber) + " or press 6 to return to main menu"
+
+    def checkExistingTeam(self):
+        self.playerNumber = self.teamManager.getNumPlayers()
 
     def output(self, line):
         super().output(line)
@@ -69,7 +66,7 @@ class InputTeam(UIComponent):
             pass #store player
 
 class ManageChips(UIComponent):
-    def getInitText(self):
+    def onChange(self):
         pass
 
     def output(self, line):

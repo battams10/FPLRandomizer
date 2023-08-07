@@ -21,8 +21,7 @@ class getData: #test of reading player data
             print(newline)
             return newline
         except:
-            return None
-        
+            return None   
         
     def getLine2(self):  
         try:  
