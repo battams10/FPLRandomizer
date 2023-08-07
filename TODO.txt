@@ -1,3 +1,15 @@
-- write data reader
-- write data writer
-    - create own table with needed data 
+- write data reader [X]
+- write data writer [X]
+    - create own table with needed data [X]
+
+- UI []
+    - Index []
+    - Team inputter []
+    - Get transfer []
+    - Get chip dates []
+        - gen new dates []
+        - see existing dates []
+        - wildcard selection []
+        - freehit selection []
+    - Get captain []
+    - Select starting 11 []
